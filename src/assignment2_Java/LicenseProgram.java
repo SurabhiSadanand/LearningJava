@@ -1,12 +1,16 @@
 package assignment2_Java;
 
+import java.util.Scanner;
+
 public class LicenseProgram {
 
 	public static void main(String[] args) {
-		int age = 23;
+		int age = 18;
 		String licenseIssued;
-		String currentLevel = "G1";
-
+		String currentLevel = "";
+		System.out.println("Enter current License level:");
+		Scanner sc=new Scanner(System.in);
+        currentLevel= sc.next();
 		// Print the input for age and current license level
 		System.out.println("\n Age of the person applying for license: " + age);
 		System.out.println("\n Current level of license of the person: " + currentLevel);
@@ -38,7 +42,7 @@ public class LicenseProgram {
 		else {
 			System.out.println("\n Enter a valid input for License Level or age ");
 		}
-
+        sc.close();
 	}
 
 }
