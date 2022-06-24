@@ -6,27 +6,19 @@ public class InvoiceMain {
 
 	public static void main(String[] args) {
 		Invoice inv = new Invoice();
-		Product[] p = new Product[2];
-		String name;
-		double pricePerUnit;
-		int quantity;
-		String description;
-		Scanner sc = new Scanner(System.in);
-		for (int i = 0; i < p.length; i++) {
-			System.out.println("Enter product" + (i + 1) + " name: ");
-			name = sc.next();
-			System.out.println("Enter product" + (i + 1) + " price per unit: ");
-			pricePerUnit = sc.nextDouble();
-			System.out.println("Enter product" + (i + 1) + " description: ");
-			description = sc.next();
-			p[i] = new Product(name, pricePerUnit, description);
-			System.out.println("Enter quantity of product" + (i + 1));
-			quantity = sc.nextInt();
-			double amt = inv.generateInvoice(p[i], quantity);
-			System.out.println("Total amount for product" + (i + 1) + ": " + amt);
-		}
+		Product[] productsSelected = new Product[3];
 
-		sc.close();
+		productsSelected[0] = new Product("Hoodies", 20, "Full length", 2);
+		productsSelected[1] = new Product("Jeans", 40, "Denim", 5);
+		productsSelected[2] = new Product("Dresses", 30, "Summer Special", 10);
+
+		double invoiceAmount;
+		invoiceAmount = inv.generateInvoice(productsSelected);
+		System.out.println("Invoice total for products selected:" + invoiceAmount);
+
+		double amountAfterTax;
+		amountAfterTax = inv.amountAfterTax(invoiceAmount);
+		System.out.println("Invoice including tax:" + amountAfterTax);
 	}
 
 }
