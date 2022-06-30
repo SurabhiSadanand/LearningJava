@@ -33,7 +33,8 @@ public class MainClass {
 						double depositAmount = sc.nextDouble();
 						System.out.println("Insert cash in ATM machine");
 						atm.depositCash(surabhi, depositAmount);
-					} else {
+					} 
+					else {
 						System.out.println("Enter correct pin");
 						break;
 					}

@@ -7,24 +7,28 @@ public class ATM {
 	Scanner sc = new Scanner(System.in);
 	double dailyCashLimit = 10000;
 	Person surabhi = new Person();
-	int count = 0;
+	int noOfAttempts = 0;
 
 	boolean checkPin(Person surabhi) {
 		    
 			System.out.println("Enter PIN");
 			int enteredPin = sc.nextInt();
-			count++;
+			noOfAttempts++;
 
-			if (enteredPin == surabhi.pin()) {
+			while (enteredPin != surabhi.pin() && noOfAttempts < 3) {
+                System.out.println("\nINCORRECT PIN. TRY AGAIN.");
+                System.out.println("Enter PIN: ");
+                enteredPin = sc.nextInt();
+                noOfAttempts++;
+            }
+			if (enteredPin == surabhi.pin()) 
 				return true;
 
-			} else {
-                
-				return false;
-
-			}
-		    
-		
+			 
+            else if (noOfAttempts >= 3) 
+               System.out.println("\nYOU HAVE RUN OUT OF TRIES. ACCOUNT LOCKED.");
+		       return false;
+            
 	}
 
 	public void depositCash(Person surabhi, double depositAmount) {
