@@ -15,7 +15,7 @@ public class R2 extends Rocket {
 	 public boolean launch() {
         Random r = new Random();
         double randomValue = r.nextDouble();
-        int factor = (int) (0.04 * (getWeight()) / getWeight());
+        int factor = (int) (0.04 * (getWeight()) / getMaxWeight());
         return (factor < randomValue);
     }
 	
@@ -23,7 +23,7 @@ public class R2 extends Rocket {
     public boolean land() {
         Random r = new Random();
         double randomValue = r.nextDouble();
-        int factor = (int) (0.08 * (getWeight()) /  getWeight());
+        int factor = (int) (0.08 * (getWeight()) /  getMaxWeight());
         return (factor < randomValue);
     }
 

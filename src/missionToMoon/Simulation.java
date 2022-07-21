@@ -51,7 +51,6 @@ public class Simulation {
 
 				rocket = new R1();
 				rockets.add(rocket);
-				// System.out.println("...New Rocket Created....");
 				rocket.carry(item);
 			}
 		}
@@ -76,7 +75,6 @@ public class Simulation {
 
 				rocket = new R2();
 				rockets.add(rocket);
-				// System.out.println("...New Rocket Created....");
 				rocket.carry(item);
 			}
 		}
