@@ -15,6 +15,6 @@ public class Main {
 		int r2Budget = 0;
 		ArrayList<Rocket> r2RocketsPhaseOne = mySim.loadU2(mySim.loadItems());
 		r2Budget += mySim.runSimulation(r2RocketsPhaseOne);
-		System.out.println("Total cost for R2 fleet, phase 1: $" + r1Budget + " million.");
+		System.out.println("Total cost for R2 fleet, phase 1: $" + r2Budget + " million.");
 	}
 }

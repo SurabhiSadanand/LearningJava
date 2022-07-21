@@ -88,9 +88,11 @@ public class Simulation {
 
 		int totalCost = 0;
 		for (Rocket rocket : rocketList) {
-			do {
+			
 				totalCost += rocket.getCost();
-			} while (!(rocket.launch() && rocket.land()));
+			 while (!rocket.launch() || !rocket.land()){
+				 totalCost += rocket.getCost();
+			 }
 		}
 		return totalCost;
 	}

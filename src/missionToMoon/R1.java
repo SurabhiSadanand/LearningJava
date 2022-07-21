@@ -16,7 +16,7 @@ public class R1 extends Rocket{
         Random r = new Random();
         double randomValue = r.nextDouble();
         int factor = (int) (0.05 * ( getWeight()) / (getMaxWeight()));
-        return (factor >= randomValue);
+        return (factor < randomValue);
     }
 	
 	@Override
@@ -24,7 +24,7 @@ public class R1 extends Rocket{
         Random r = new Random();
         double randomValue = r.nextDouble();
         int factor = (int) (0.01 * (getWeight()) / (getMaxWeight()));
-        return (factor >= randomValue);
+        return (factor < randomValue);
     }
 
 }
